@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../css/menuUser/menuUser.css">
-    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="../css/menuPokemon/menuPokemon.css">
+    <title>Menu Pokemon</title>
 </head>
 <body>
     <div id="gameboy" class="gameboy">
@@ -26,30 +26,36 @@
         </div>
         <!-- screen of the gameboy -->
         <div id="screen" class="screen">
-            <form action="abaPokemons" method="POST">
+            <form action="login" method="POST">
                 @csrf
-                <input type="hidden" name="username" value="{{$trainer->username}}">
-                <input type="hidden" name="page" value="1">
-                <button type="submit" class="btnAddPokemonPage">Adicionar Pokemon</button>
+                <input type="hidden" name="username" value="{{$username}}">
+                <button type="submit" class="btnBack">Voltar ao Menu</button>
             </form>
             <div class="userInfoContainer">
-                <h1>{{$trainer->username}}</h1>
-                @if($trainer->gender == 'masculino')
-                <img id="imgAvatar" class="imgAvatar" src="../images/maleTrainer.png" alt="Avatar do Personagem">
-                @else
-                <img id="imgAvatar" class="imgAvatar" src="../images/femaleTrainer.png" alt="Avatar do Personagem">
-                @endif
-                <h2>Region: {{$trainer->region}}</h2>
-                <h3>Age: {{$trainer->age}}</h3>
+                <h1>{{$username}}</h1>
             </div>
-            <div id="pokemonsInfoContainer" class="pokemonsInfoContainer">
+            <div class="pokemonsContainer">
                 @foreach($pokemons as $pokemon)
-                <div class="pokemonInfo">
-                    <img class="imgPokemon" src="{{$pokemon['image_url']}}">
-                    <p class="namePokemon">{{$pokemon['name']}}</p>
-                    <p class="typePokemon">{{$pokemon['attribute']}}</p>
-                </div>
+                    <div class="pokemonInfo">
+                        <span class="namePokemon">{{ucfirst($pokemon->name)}}</span>
+                        <img class="imgPokemon" src="{{$pokemon->image_url}}">
+                        <span class="type">{{$pokemon->attribute}}</span>
+                    </div>
                 @endforeach
+            </div>
+            <div class="buttonsPageContainer">
+                <form action="abaPokemons" method="POST">
+                    @csrf
+                    <input type="hidden" name="username" value="{{$username}}">
+                    <input type="hidden" name="page" value="{{($page - 1)}}">
+                    <button type="submit" class="btnChangePage">Página Anterior</button>
+                </form>
+                <form action="abaPokemons" method="POST">
+                    @csrf
+                    <input type="hidden" name="username" value="{{$username}}">
+                    <input type="hidden" name="page" value="{{($page + 1)}}">
+                    <button type="submit" class="btnChangePage">Próxima Pagina</button>
+                </form>
             </div>
         </div>
         <!-- right part of the gameboy -->

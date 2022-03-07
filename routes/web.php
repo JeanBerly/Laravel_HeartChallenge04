@@ -2,22 +2,12 @@
 
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
+use App\Models\Pokemon;
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/home');
 });
-Route::get('/home', function (){
-    return view('login');
-});
-Route::get('/home/{username}', [UsersController::class, 'getProfile']);
+Route::view("/home", "login");
+Route::post("login", [UsersController::class, 'getProfile']);
+Route::view("/cadastro", "cadastro");
+Route::post("register", [UsersController::class, 'registerProfile']);
+Route::post("abaPokemons", [UsersController::class, 'pokemonMenu']);

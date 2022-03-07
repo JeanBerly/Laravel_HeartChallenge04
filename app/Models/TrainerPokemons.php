@@ -17,5 +17,10 @@ class TrainerPokemons extends Model
         'trainer_id',
         'pokemon_id',
     ];
-    
+    public function trainer(){
+        return $this->hasOne(Trainer::class, 'id', 'trainer_id');
+    }
+    public function pokemonInfo(){
+        return $this->hasOne(Pokemon::class, 'id', 'pokemon_id');
+    }
 }

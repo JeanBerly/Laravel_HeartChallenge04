@@ -9,7 +9,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('../images/pokemonEmerald.jpg');
+    background-image: url('../../images/pokemonEmerald.jpg');
     background-position: cover;
     height: 100vh;
 }
@@ -71,7 +71,7 @@ body{
     }
     input{
         display: block;
-        box-sizing: border-box !important;
+        box-sizing: border-box;
         border: none;
         color: black;
         border-radius: 5px;
@@ -84,4 +84,17 @@ body{
     p{
         color: white;
     }
+    datalist{
+        display: none;
+    }
+    label[for="feminino"], label[for="masculino"]{
+        font-size: 20px;
+        input{
+            display: inline;
+            margin: 5px;
+        }
+    }
+}
+a{
+    font-size: 25px;
 }

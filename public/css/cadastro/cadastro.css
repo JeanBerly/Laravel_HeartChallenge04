@@ -17,7 +17,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-image: url("../images/pokemonEmerald.jpg");
+  background-image: url("../../images/pokemonEmerald.jpg");
   background-position: cover;
   height: 100vh;
 }
@@ -109,8 +109,8 @@ body {
 
 .form input {
   display: block;
-  -webkit-box-sizing: border-box !important;
-          box-sizing: border-box !important;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   border: none;
   color: black;
   border-radius: 5px;
@@ -124,5 +124,22 @@ body {
 
 .form p {
   color: white;
+}
+
+.form datalist {
+  display: none;
+}
+
+.form label[for="feminino"], .form label[for="masculino"] {
+  font-size: 20px;
+}
+
+.form label[for="feminino"] input, .form label[for="masculino"] input {
+  display: inline;
+  margin: 5px;
+}
+
+a {
+  font-size: 25px;
 }
 /*# sourceMappingURL=cadastro.css.map */
