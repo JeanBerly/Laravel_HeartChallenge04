@@ -346,4 +346,13 @@ body {
   width: -moz-fit-content;
   width: fit-content;
 }
+
+.screen .pokemonsContainer .pokemonInfo .btnAdd {
+  display: block;
+  width: 100px;
+  height: 20px;
+  margin: 0 auto;
+  background-color: #ff2323;
+  border-radius: 10px;
+}
 /*# sourceMappingURL=menuPokemon.css.map */

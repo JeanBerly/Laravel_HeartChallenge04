@@ -37,6 +37,13 @@
             <div class="pokemonsContainer">
                 @foreach($pokemons as $pokemon)
                     <div class="pokemonInfo">
+                        <form action="addPokemonToTrainer" method="POST">
+                            @csrf
+                            <input type="hidden" name="username" value="{{$username}}">
+                            <input type="hidden" name="id" value="{{$pokemon->id}}">
+                            <input type="hidden" name="page" value="{{$page}}">
+                            <button type="submit" class="btnAdd">Add</button>
+                        </form>
                         <span class="namePokemon">{{ucfirst($pokemon->name)}}</span>
                         <img class="imgPokemon" src="{{$pokemon->image_url}}">
                         <span class="type">{{$pokemon->attribute}}</span>

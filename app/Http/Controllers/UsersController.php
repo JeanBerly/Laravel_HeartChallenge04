@@ -60,4 +60,18 @@ class UsersController extends Controller
                     })->get();
         return view('pokemonMenu', compact('username', 'pokemons', 'page'));
     }
+    public function addPokemonToTrainer(Request $request){
+        $username = $request->input()['username'];
+        $page = $request->input()['page'];
+        $trainerId = Trainer::all()->where('username', '=', $username)->first()->id;
+        $pokemonId = $request->input()['id'];
+        DB::table('trainer_pokemons')->insert([
+            'trainer_id' => $trainerId,
+            'pokemon_id' => $pokemonId,
+        ]);
+        $requestRedirect = new Request();
+        $requestRedirect->setMethod('POST');
+        $requestRedirect->request->add(['username' => $username, 'page' => $page]);
+        return ($this->pokemonMenu($requestRedirect));
+    }
 }

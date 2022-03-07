@@ -11,3 +11,4 @@ Route::post("login", [UsersController::class, 'getProfile']);
 Route::view("/cadastro", "cadastro");
 Route::post("register", [UsersController::class, 'registerProfile']);
 Route::post("abaPokemons", [UsersController::class, 'pokemonMenu']);
+Route::post("addPokemonToTrainer", [UsersController::class, 'addPokemonToTrainer']);
