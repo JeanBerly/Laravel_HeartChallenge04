@@ -7,6 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 <h1>Pokedéx</h1>
+Link do vídeo: <a href ="https://www.youtube.com/watch?v=hweuPJzICao">LINK</a><br>
 Neste projeto você pode cadastrar um usuário e posteriormente logar com ele, podendo adicionar pokemons em seu registro, tudo isso fica guardado
 em um banco de dados.
 
