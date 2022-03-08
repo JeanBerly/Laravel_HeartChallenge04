@@ -9,7 +9,7 @@
 <h1>Pokedéx</h1>
 Link do vídeo: <a href ="https://www.youtube.com/watch?v=hweuPJzICao">LINK</a><br>
 Neste projeto você pode cadastrar um usuário e posteriormente logar com ele, podendo adicionar pokemons em seu registro, tudo isso fica guardado
-em um banco de dados.
+em um banco de dados. Projeto inspirado no <a href="https://github.com/he4rtlabs/he4rtlabs-challenges-04">Heart Challenge 04 </a>
 
 ## Quero rodar em minha máquina, como fazer?
 
