@@ -45,18 +45,19 @@ class UsersController extends Controller
     }
 
     public function pokemonMenu(Request $request){
+        $pokemonsPerPage = 15;
         $username = $request->input()['username'];
         $page = $request->input()['page'];
         if ($page < 1){
-            $page = (DB::table('pokemons')->count() / 15);
+            $page = intdiv(DB::table('pokemons')->count(), $pokemonsPerPage);
         }
-        else if($page > DB::table('pokemons')->count() / 15){
+        else if($page > intdiv(DB::table('pokemons')->count(),  $pokemonsPerPage)){
             $page = 1;
         }
         $pokemons = DB::table('pokemons')
-                    ->where(function($query) use($page){
-                        $query->where('id', '<', $page * 15)
-                              ->where('id', '>', ($page - 1) * 15);
+                    ->where(function($query) use($page, $pokemonsPerPage){
+                        $query->where('id', '<', $page * $pokemonsPerPage)
+                              ->where('id', '>', ($page - 1) * $pokemonsPerPage);
                     })->get();
         return view('pokemonMenu', compact('username', 'pokemons', 'page'));
     }

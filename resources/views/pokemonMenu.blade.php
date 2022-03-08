@@ -46,7 +46,7 @@
                         </form>
                         <span class="namePokemon">{{ucfirst($pokemon->name)}}</span>
                         <img class="imgPokemon" src="{{$pokemon->image_url}}">
-                        <span class="type">{{$pokemon->attribute}}</span>
+                        <span class="type">{{ucfirst($pokemon->attribute)}}</span>
                     </div>
                 @endforeach
             </div>

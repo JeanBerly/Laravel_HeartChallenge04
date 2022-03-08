@@ -46,7 +46,7 @@
                 @foreach($pokemons as $pokemon)
                 <div class="pokemonInfo">
                     <img class="imgPokemon" src="{{$pokemon['image_url']}}">
-                    <p class="namePokemon">{{$pokemon['name']}}</p>
+                    <p class="namePokemon">{{ucfirst($pokemon['name'])}}</p>
                     <p class="typePokemon">{{$pokemon['attribute']}}</p>
                 </div>
                 @endforeach
