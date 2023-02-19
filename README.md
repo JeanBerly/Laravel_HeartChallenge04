@@ -8,7 +8,6 @@
 </p>
 <h1>Pokedéx</h1>
 <a href ="https://www.youtube.com/watch?v=hweuPJzICao">Link do vídeo demonstração</a><br>
-<a href="http://pokedex-jeanb.herokuapp.com/home">Link do site</a><br>
 Neste projeto você pode cadastrar um usuário e posteriormente logar com ele, podendo adicionar pokemons em seu registro, tudo isso fica guardado
 em um banco de dados. Projeto inspirado no <a href="https://github.com/he4rtlabs/he4rtlabs-challenges-04">Heart Challenge 04 </a>
 
